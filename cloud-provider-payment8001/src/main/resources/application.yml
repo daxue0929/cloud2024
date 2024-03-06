@@ -16,6 +16,6 @@ spring:
 # ========================mybatis===================
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.atguigu.cloud.
+  type-aliases-package: com.atguigu.cloud.entities
   configuration:
     map-underscore-to-camel-case: true
