@@ -50,12 +50,12 @@ public class PayController {
 
     @GetMapping(value = "/pay/get/{id}")
     @Operation(summary = "按照ID查流水",description = "查询支付流水方法")
-    public ResultData<Pay> getById(@PathVariable("id") Integer id) {
+    public ResultData getById(@PathVariable("id") Integer id) {
         return ResultData.success(payService.getById(id));
     }
 
     @GetMapping(value = "/pay/getAll")
-    public ResultData<List<Pay>> getAll() {
+    public ResultData getAll() {
         List<Pay> all = payService.getAll();
         return ResultData.success(all);
     }
