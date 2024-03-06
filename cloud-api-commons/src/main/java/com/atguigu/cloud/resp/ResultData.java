@@ -3,13 +3,16 @@ package com.atguigu.cloud.resp;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * @Author：daxue0929
  * @Date：2024/3/6 11:16
  */
 @Data
 @Accessors(chain = true)
-public class ResultData<T> {
+public class ResultData<T> implements Serializable {
+
     private String code;/** 结果状态 ,具体状态码参见枚举类ReturnCodeEnum.java*/
     private String message;
     private T data;
