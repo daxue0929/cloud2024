@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: cloud-payment-service
+    ####Spring Cloud Consul for Service Discovery
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+#       prefer-ip-address: true #优先使用服务ip进行注册
+        service-name: ${spring.application.name}
+      config:
+        profile-separator: '-' # default value is ","，we update '-'
+        format: YAML
+
+# config/cloud-payment-service/data
+#       /cloud-payment-service-dev/data
+#       /cloud-payment-service-prod/data

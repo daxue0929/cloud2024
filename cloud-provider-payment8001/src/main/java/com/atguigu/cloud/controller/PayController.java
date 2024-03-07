@@ -26,7 +26,7 @@ public class PayController {
     private PayService payService;
 
     @PostMapping(value = "/pay/add")
-    @Operation(summary = "新增",description = "新增支付流水方法,json串做参数")
+    @Operation(summary = "新增", description = "新增支付流水方法,json串做参数")
     public ResultData<String> addPay(@RequestBody Pay pay) {
         log.info(pay.toString());
         int i = payService.add(pay);
@@ -34,14 +34,16 @@ public class PayController {
     }
 
     @DeleteMapping(value = "/pay/del/{id}")
-    @Operation(summary = "删除",description = "删除支付流水方法")
+    @Operation(summary = "删除", description = "删除支付流水方法")
     public ResultData<Integer> deletePay(@PathVariable("id") Integer id) {
+        log.info("enter deletePay data: {}", id);
         return ResultData.success(payService.delete(id));
     }
 
     @PutMapping(value = "/pay/update")
-    @Operation(summary = "修改",description = "修改支付流水方法")
+    @Operation(summary = "修改", description = "修改支付流水方法")
     public ResultData<String> updatePay(@RequestBody PayDTO payDTO) {
+        log.info("enter updatePay in data: {}", payDTO.toString());
         Pay pay = new Pay();
         BeanUtils.copyProperties(payDTO, pay);
         int i = payService.update(pay);
@@ -49,13 +51,15 @@ public class PayController {
     }
 
     @GetMapping(value = "/pay/get/{id}")
-    @Operation(summary = "按照ID查流水",description = "查询支付流水方法")
+    @Operation(summary = "按照ID查流水", description = "查询支付流水方法")
     public ResultData getById(@PathVariable("id") Integer id) {
+        log.info("enter getById data: {}", id);
         return ResultData.success(payService.getById(id));
     }
 
     @GetMapping(value = "/pay/getAll")
     public ResultData getAll() {
+        log.info("enter getAll...");
         List<Pay> all = payService.getAll();
         return ResultData.success(all);
     }

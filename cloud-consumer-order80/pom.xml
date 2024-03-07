@@ -29,6 +29,12 @@
             </exclusions>
         </dependency>
 
+        <!--loadbalancer-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
         <!-- 引用自己定义的api通用包 -->
         <dependency>
             <groupId>com.atguigu.cloud</groupId>
