@@ -14,6 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class OrderController {
 
+    /**
+     * openFeign
+     * 超时控制
+     * 支持sentinel的fallback
+     * 支持http请求和响应的压缩
+     */
+
     @Resource
     private PayFeignApi payFeignApi;
 
