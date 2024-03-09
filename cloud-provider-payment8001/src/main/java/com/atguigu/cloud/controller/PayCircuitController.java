@@ -25,5 +25,19 @@ public class PayCircuitController {
         return "Hello, circuit! inputId:  "+id+" \t " + IdUtil.simpleUUID();
     }
 
+    //=========Resilience4j bulkhead 的例子
+    @GetMapping(value = "/pay/bulkhead/{id}")
+    public String myBulkhead(@PathVariable("id") Integer id)
+    {
+        if(id == -4) throw new RuntimeException("----bulkhead id 不能-4");
+
+        if(id == 9999)
+        {
+            try { TimeUnit.SECONDS.sleep(5); } catch (InterruptedException e) { e.printStackTrace(); }
+        }
+
+        return "Hello, bulkhead! inputId:  "+id+" \t " + IdUtil.simpleUUID();
+    }
+
 
 }
