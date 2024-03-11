@@ -32,13 +32,13 @@ spring:
         enabled: true
         group:
           enabled: true #没开分组永远不用分组的配置。精确优先、分组次之(开了分组)、默认最后
-#logging:
-#  level:
-#    com:
-#      atguigu:
-#        cloud:
-#          apis:
-#            PayFeignApi: debug
+logging:
+  level:
+    com:
+      atguigu:
+        cloud:
+          apis:
+            PayFeignApi: debug
 
 # Resilience4j CircuitBreaker 按照次数：COUNT_BASED 的例子
 #  6次访问中当执行方法的失败率达到50%时CircuitBreaker将进入开启OPEN状态(保险丝跳闸断电)拒绝所有请求。
