@@ -5,6 +5,9 @@ import com.atguigu.cloud.entities.Pay;
 import com.atguigu.cloud.resp.ResultData;
 import com.atguigu.cloud.service.PayService;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date：2024/3/11 17:14
  */
 @RestController
-public class PayGateWayController
-{
+@Slf4j
+public class PayGateWayController {
+
+    @Value("${server.port}")
+    private String port;
+
     @Resource
     PayService payService;
 
@@ -29,6 +36,8 @@ public class PayGateWayController
     @GetMapping(value = "/pay/gateway/info")
     public ResultData<String> getGatewayInfo()
     {
-        return ResultData.success("gateway info test："+ IdUtil.simpleUUID());
+        String id = IdUtil.simpleUUID();
+        log.info("gateway info test_{}：{}", port, id);
+        return ResultData.success("gateway info test："+ id);
     }
 }
