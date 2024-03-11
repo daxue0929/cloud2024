@@ -11,10 +11,14 @@
 > https://www.bilibili.com/video/BV1gW421P7RD
 
 ### 本地启动
-- 首先要本地启动 consul 注册中心``consul agent -dev`` 命令
-  - 直接``control + c`` 退出即可
-- 如果想看到zipkin链路的效果，还需要启动 ``brew services start zipkin``工具
-  - 可以使用 ``brew services stop zipkin`` 关闭zipkin服务
+
+1.首先要本地启动 consul 注册中心``consul agent -dev`` 命令
+> 直接``control + c`` 退出即可   
+> 访问地址：``http://localhost:8500/``
+
+2.如果想看到zipkin链路的效果，还需要启动 ``brew services start zipkin``工具
+> 可以使用 ``brew services stop zipkin`` 关闭zipkin服务
+
 
 ### 总结：
 
