@@ -17,6 +17,7 @@
         <module>cloud-gateway9527</module>
         <module>cloudalibaba-provider-patment9001</module>
         <module>cloudalibaba-consumer-nacos-order83</module>
+        <module>cloudalibaba-sentinel-service8401</module>
     </modules>
 
     <properties>
