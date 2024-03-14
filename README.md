@@ -6,6 +6,9 @@
 2. 介绍了Spring Cloud集成Openfeign
 3. 介绍了Sring Cloud集成resilience4j
 
+### 代码结构图
+暂无
+
 ### 视频地址：
 
 > https://www.bilibili.com/video/BV1gW421P7RD
@@ -15,6 +18,11 @@
 1.首先要本地启动 consul 注册中心``consul agent -dev`` 命令
 > 直接``control + c`` 退出即可   
 > 访问地址：``http://localhost:8500/``
+
+如果启动的是alibaba的服务,可能需要启动``nacos``
+> ``cd /Users/wangxuedi/dev/nacos/bin``  
+> 然后运行命令 ``sh startup.sh -m standalone``
+
 
 2.如果想看到zipkin链路的效果，还需要启动 ``brew services start zipkin``工具
 > 可以使用 ``brew services stop zipkin`` 关闭zipkin服务
