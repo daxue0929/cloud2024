@@ -27,6 +27,11 @@
 2.如果想看到zipkin链路的效果，还需要启动 ``brew services start zipkin``工具
 > 可以使用 ``brew services stop zipkin`` 关闭zipkin服务
 
+3.打开``sentinel``流量治理组件  
+```bash
+java -jar ~/dev/sentinel/sentinel-dashboard-1.8.7.jar 
+退出时,直接 "control + c" 退出即可   
+```
 
 ### 总结：
 
