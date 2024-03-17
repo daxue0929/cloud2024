@@ -21,16 +21,23 @@
 
 如果启动的是alibaba的服务,可能需要启动``nacos``
 > ``cd /Users/wangxuedi/dev/nacos/bin``  
-> 然后运行命令 ``sh startup.sh -m standalone``
+> 然后运行命令 ``sh startup.sh -m standalone``  
+> 浏览器访问 http://localhost:8848/nacos
 
 
 2.如果想看到zipkin链路的效果，还需要启动 ``brew services start zipkin``工具
-> 可以使用 ``brew services stop zipkin`` 关闭zipkin服务
+> 可以使用 ``brew services stop zipkin`` 关闭zipkin服务  
+> 浏览器打开地址访问 http://localhost:9411/zipkin/
 
 3.打开``sentinel``流量治理组件  
 ```bash
-java -jar ~/dev/sentinel/sentinel-dashboard-1.8.7.jar 
-退出时,直接 "control + c" 退出即可   
+java -jar ~/dev/sentinel/sentinel-dashboard-1.8.7.jar  
+
+请求访问地址 http://localhost:8080/#/login
+
+登录/密码 sentinel/sentinel  
+
+退出时,直接 "control + c" 退出即可
 ```
 
 ### 总结：
