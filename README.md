@@ -13,6 +13,12 @@
 
 > https://www.bilibili.com/video/BV1gW421P7RD
 
+
+### 代码生成
+
+先修改``config.properties``、``generatorConfig.xml``  
+然后执行maven插件，在mybatis-generator2024模块下。maven插件Plugins下的mybatis-generator
+
 ### 本地启动
 
 1.首先要本地启动 consul 注册中心``consul agent -dev`` 命令
@@ -39,6 +45,7 @@ java -jar ~/dev/sentinel/sentinel-dashboard-1.8.7.jar
 
 退出时,直接 "control + c" 退出即可
 ```
+
 
 ### 总结：
 
